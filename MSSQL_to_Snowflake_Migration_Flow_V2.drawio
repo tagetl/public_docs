@@ -1,0 +1,240 @@
+<mxfile host="Electron" agent="Claude" pages="2">
+  <diagram id="flow" name="1 · Process Flow">
+    <mxGraphModel dx="1881" dy="912" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="950" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t1" parent="1" style="text;html=1;fontSize=20;fontStyle=1;fontColor=#1F2933;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="SQL Server (On-Prem) → Snowflake · Data Migration Process Flow" vertex="1">
+          <mxGeometry height="34" width="1100" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" parent="1" style="text;html=1;fontSize=12;fontColor=#616E7C;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="Data only · tables only · 3–4 TB · ≤16 columns per table · source stays live · bulk historical load → ongoing delta sync → parallel run" vertex="1">
+          <mxGeometry height="22" width="1100" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ph0" parent="1" style="shape=step;perimeter=stepPerimeter;fixedSize=1;size=14;whiteSpace=wrap;html=1;fillColor=#F0F2F5;strokeColor=#9AA5B1;strokeWidth=1;fontSize=11;fontColor=#1F2933;fontFamily=Helvetica;" value="&lt;b&gt;0&lt;/b&gt; · Assess &amp;amp; Discover" vertex="1">
+          <mxGeometry height="36" width="253" x="40" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" parent="1" style="shape=step;perimeter=stepPerimeter;fixedSize=1;size=14;whiteSpace=wrap;html=1;fillColor=#E3F4FB;strokeColor=#29B5E8;strokeWidth=1;fontSize=11;fontColor=#1F2933;fontFamily=Helvetica;" value="&lt;b&gt;1&lt;/b&gt; · Snowflake Setup" vertex="1">
+          <mxGeometry height="36" width="253" x="293" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ph2" parent="1" style="shape=step;perimeter=stepPerimeter;fixedSize=1;size=14;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;strokeWidth=1;fontSize=11;fontColor=#1F2933;fontFamily=Helvetica;" value="&lt;b&gt;2&lt;/b&gt; · Historical Load (one-time)" vertex="1">
+          <mxGeometry height="36" width="253" x="546" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ph3" parent="1" style="shape=step;perimeter=stepPerimeter;fixedSize=1;size=14;whiteSpace=wrap;html=1;fillColor=#FDF0E4;strokeColor=#E67E22;strokeWidth=1;fontSize=11;fontColor=#1F2933;fontFamily=Helvetica;" value="&lt;b&gt;3&lt;/b&gt; · Delta Sync (ongoing)" vertex="1">
+          <mxGeometry height="36" width="253" x="799" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ph4" parent="1" style="shape=step;perimeter=stepPerimeter;fixedSize=1;size=14;whiteSpace=wrap;html=1;fillColor=#F3E8F7;strokeColor=#7B3FA0;strokeWidth=1;fontSize=11;fontColor=#1F2933;fontFamily=Helvetica;" value="&lt;b&gt;4&lt;/b&gt; · Validate &amp;amp; Parallel Run" vertex="1">
+          <mxGeometry height="36" width="253" x="1052" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ph5" parent="1" style="shape=step;perimeter=stepPerimeter;fixedSize=1;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9AA5B1;strokeWidth=1;dashed=1;fontSize=11;fontColor=#616E7C;fontFamily=Helvetica;" value="&lt;b&gt;5&lt;/b&gt; · Cutover (later)" vertex="1">
+          <mxGeometry height="36" width="253" x="1305" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="zOn" parent="1" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontStyle=1;fontSize=12;fontColor=#3E4C59;fillColor=#F7F8FA;strokeColor=#9AA5B1;strokeWidth=1;fontFamily=Helvetica;" value="ON-PREM · Client Network" vertex="1">
+          <mxGeometry height="570" width="360" x="40" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="zIn" parent="1" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontStyle=1;fontSize=12;fontColor=#3E4C59;fillColor=#FFFFFF;strokeColor=#B0B7C3;strokeWidth=1;dashed=1;fontFamily=Helvetica;" value="INGESTION" vertex="1">
+          <mxGeometry height="570" width="560" x="430" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="zSf" parent="1" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontStyle=1;fontSize=12;fontColor=#0B6E99;fillColor=#F2FAFD;strokeColor=#29B5E8;strokeWidth=1;fontFamily=Helvetica;" value="SNOWFLAKE · Cloud" vertex="1">
+          <mxGeometry height="570" width="540" x="1020" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="sql" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#FFFFFF;strokeColor=#52606D;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;SQL Server&lt;/b&gt;&lt;br&gt;on-prem source&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;(stays live)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="125" x="65" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="bulk" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E7D32;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Bulk Extract&lt;/b&gt;&lt;br&gt;Python → Parquet (primary)&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;bcp for numeric-only tables&lt;/font&gt;" vertex="1">
+          <mxGeometry height="68" width="160" x="225" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="ct" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E67E22;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Change Tracking / CDC&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;enabled with DBA approval&lt;/font&gt;" vertex="1">
+          <mxGeometry height="62" width="145" x="230" y="481" as="geometry" />
+        </mxCell>
+        <mxCell id="ctver" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFBF7;strokeColor=#E67E22;strokeWidth=1;dashed=1;fontSize=10;fontFamily=Helvetica;" value="&lt;b&gt;Record CT version&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;before bulk extract –&lt;br&gt;delta starts from here&lt;/font&gt;" vertex="1">
+          <mxGeometry height="58" width="145" x="230" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="eCv" edge="1" parent="1" source="ctver" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#E67E22;dashed=1;endArrow=blockThin;endFill=1;" target="ct">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onnote" parent="1" style="text;html=1;whiteSpace=wrap;fontSize=10;fontColor=#7B8794;fontStyle=2;align=left;verticalAlign=top;fontFamily=Helvetica;" value="Pre-checks: PKs on all tables · DBA approval for Change Tracking · upload bandwidth · type watch-outs: char padding (RTRIM), nvarchar Unicode, varbinary size, bit → BOOLEAN, datetime → TIMESTAMP_NTZ(3)" vertex="1">
+          <mxGeometry height="80" width="325" x="60" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="hHdr" parent="1" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#2E7D32;align=left;fontFamily=Helvetica;" value="Historical Load · one-time bulk" vertex="1">
+          <mxGeometry height="22" width="300" x="460" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="files" parent="1" style="shape=note;size=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E7D32;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Parquet (Snappy)&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;100–250 MB files&lt;br&gt;~0.8–1.3 TB total&lt;/font&gt;" vertex="1">
+          <mxGeometry height="68" width="140" x="460" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="put" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E7D32;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;PUT&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;SnowSQL / Python&lt;/font&gt;" vertex="1">
+          <mxGeometry height="62" width="120" x="650" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="hNote" parent="1" style="text;html=1;whiteSpace=wrap;fontSize=10;fontColor=#7B8794;fontStyle=2;align=left;fontFamily=Helvetica;" value="Parallel per table · restartable by chunk · no intermediate cloud storage · upload bandwidth drives timeline (1 TB ≈ 23 h @ 100 Mbps)" vertex="1">
+          <mxGeometry height="34" width="510" x="460" y="292" as="geometry" />
+        </mxCell>
+        <mxCell id="dHdr" parent="1" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#C25E0B;align=left;fontFamily=Helvetica;" value="Delta Sync · ongoing — choose ONE (see page 2)" vertex="1">
+          <mxGeometry height="22" width="420" x="460" y="372" as="geometry" />
+        </mxCell>
+        <mxCell id="dGrp" parent="1" style="rounded=1;arcSize=5;whiteSpace=wrap;html=1;fillColor=#FFFBF7;strokeColor=#E67E22;strokeWidth=1;dashed=1;fontFamily=Helvetica;" value="" vertex="1">
+          <mxGeometry height="220" width="520" x="450" y="402" as="geometry" />
+        </mxCell>
+        <mxCell id="optA" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E67E22;strokeWidth=1;fontSize=11;align=left;spacingLeft=12;fontFamily=Helvetica;" value="&lt;b&gt;A · Openflow SQL Server connector&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;Snowflake-native · near real-time · choose if minutes-latency is required&lt;/font&gt;" vertex="1">
+          <mxGeometry height="52" width="480" x="470" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="optB" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#EEF7EF;strokeColor=#2E7D32;strokeWidth=1;fontSize=11;align=left;spacingLeft=12;fontFamily=Helvetica;" value="&lt;b&gt;B · Python + Airflow&lt;/b&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#2E7D32&quot;&gt;&lt;b&gt;★ RECOMMENDED&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;Change Tracking → Parquet → stage → MERGE · daily / hourly&lt;/font&gt;" vertex="1">
+          <mxGeometry height="52" width="480" x="470" y="486" as="geometry" />
+        </mxCell>
+        <mxCell id="optC" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E67E22;strokeWidth=1;fontSize=11;align=left;spacingLeft=12;fontFamily=Helvetica;" value="&lt;b&gt;C · Fivetran/HVR · Qlik Replicate&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;licensed · choose if the client prefers buying over building&lt;/font&gt;" vertex="1">
+          <mxGeometry height="52" width="480" x="470" y="552" as="geometry" />
+        </mxCell>
+        <mxCell id="dNote" parent="1" style="text;html=1;whiteSpace=wrap;fontSize=10;fontColor=#7B8794;fontStyle=2;align=left;fontFamily=Helvetica;" value="A and C include a built-in snapshot – not used for the 3–4 TB history (slow, long load on the live source)." vertex="1">
+          <mxGeometry height="22" width="515" x="455" y="628" as="geometry" />
+        </mxCell>
+        <mxCell id="dNo" parent="1" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FDF2F1;strokeColor=#E5A39B;strokeWidth=1;fontSize=10;fontColor=#8A1C12;align=left;spacingLeft=10;fontFamily=Helvetica;" value="&lt;b&gt;✕ Not recommended:&lt;/b&gt; ADF / SSIS (extra Blob staging) · watermark-only delta (misses deletes) · daily full reload (3–4 TB/day)" vertex="1">
+          <mxGeometry height="36" width="520" x="450" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="stage" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#29B5E8;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Internal Stage&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;@MIG_STAGE&lt;/font&gt;" vertex="1">
+          <mxGeometry height="62" width="125" x="1050" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="raw" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#FFFFFF;strokeColor=#29B5E8;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;RAW&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;landing + change data&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="140" x="1215" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="cur" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#E3F4FB;strokeColor=#29B5E8;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;CURATED&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;mirror of source tables&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="140" x="1400" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="found" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9ED8F0;strokeWidth=1;fontSize=10;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;fontColor=#3E4C59;fontFamily=Helvetica;" value="&lt;b&gt;Foundations (Phase 1)&lt;/b&gt;&lt;br&gt;• Enterprise edition · same cloud/region&lt;br&gt;• RBAC roles · SSO / MFA · network policy&lt;br&gt;• LOAD_WH &amp;amp; QUERY_WH · auto-suspend 60s&lt;br&gt;• Resource monitors · cost alerts" vertex="1">
+          <mxGeometry height="125" width="320" x="1050" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="zVal" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=6;fontStyle=1;fontSize=12;fontColor=#5B2C83;fillColor=#FAF6FC;strokeColor=#7B3FA0;strokeWidth=1;fontFamily=Helvetica;" value="VALIDATE &amp;amp; PARALLEL RUN · compare source vs Snowflake on every load" vertex="1">
+          <mxGeometry height="105" width="1520" x="40" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="v1" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B3FA0;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="Row counts per table" vertex="1">
+          <mxGeometry height="46" width="200" x="70" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="v2" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B3FA0;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="SUM of numeric columns" vertex="1">
+          <mxGeometry height="46" width="200" x="320" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="v3" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B3FA0;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="MIN / MAX of dates &amp;amp; keys" vertex="1">
+          <mxGeometry height="46" width="200" x="570" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="v4" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B3FA0;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="Per-partition aggregates" vertex="1">
+          <mxGeometry height="46" width="200" x="820" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="v5" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B3FA0;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="Reconciliation report" vertex="1">
+          <mxGeometry height="46" width="200" x="1070" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="v6" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F3E8F7;strokeColor=#7B3FA0;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Sign-off → Cutover&lt;/b&gt;" vertex="1">
+          <mxGeometry height="46" width="200" x="1320" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="leg" parent="1" style="text;html=1;fontSize=11;fontColor=#3E4C59;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="&lt;font color=&quot;#2E7D32&quot;&gt;━━━&lt;/font&gt; Historical load&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#E67E22&quot;&gt;━━━&lt;/font&gt; Delta sync&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#29B5E8&quot;&gt;━━━&lt;/font&gt; Inside Snowflake&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#7B3FA0&quot;&gt;╍╍╍&lt;/font&gt; Validation" vertex="1">
+          <mxGeometry height="26" width="800" x="40" y="855" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" parent="1" style="text;html=1;fontSize=10;fontColor=#7B8794;align=right;verticalAlign=middle;fontFamily=Helvetica;" value="Prepared by: Jitendra Chauhan" vertex="1">
+          <mxGeometry height="26" width="300" x="1260" y="855" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="sql" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2E7D32;endArrow=blockThin;endFill=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="bulk" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="sql" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#E67E22;endArrow=blockThin;endFill=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ct" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="bulk" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2E7D32;endArrow=blockThin;endFill=1;" target="files" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="files" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2E7D32;endArrow=blockThin;endFill=1;" target="put" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="put" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2E7D32;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#2E7D32;labelBackgroundColor=#FFFFFF;" target="stage" value="upload">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="stage" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2E7D32;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#2E7D32;labelBackgroundColor=#F2FAFD;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="raw" value="COPY INTO">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="ct" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#E67E22;endArrow=blockThin;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="dGrp" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="dGrp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#E67E22;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#C25E0B;labelBackgroundColor=#F2FAFD;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="raw" value="snapshot + changes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="raw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#29B5E8;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#0B6E99;labelBackgroundColor=#F2FAFD;" target="cur" value="MERGE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="sql" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#7B3FA0;dashed=1;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#5B2C83;labelBackgroundColor=#F7F8FA;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.06;entryY=0;entryDx=0;entryDy=0;" target="zVal" value="source metrics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="cur" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#7B3FA0;dashed=1;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#5B2C83;labelBackgroundColor=#F2FAFD;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.945;entryY=0;entryDx=0;entryDy=0;" target="zVal" value="target metrics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ev1" edge="1" parent="1" source="v1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;strokeColor=#7B3FA0;endArrow=blockThin;endFill=1;" target="v2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ev2" edge="1" parent="1" source="v2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;strokeColor=#7B3FA0;endArrow=blockThin;endFill=1;" target="v3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ev3" edge="1" parent="1" source="v3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;strokeColor=#7B3FA0;endArrow=blockThin;endFill=1;" target="v4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ev4" edge="1" parent="1" source="v4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;strokeColor=#7B3FA0;endArrow=blockThin;endFill=1;" target="v5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ev5" edge="1" parent="1" source="v5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;strokeColor=#7B3FA0;endArrow=blockThin;endFill=1;" target="v6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="decide" name="2 · Delta Tool Decision">
+    <mxGraphModel dx="900" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="820" pageHeight="790" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d-t" value="Choosing the Delta Sync Option" style="text;html=1;fontSize=20;fontStyle=1;fontColor=#1F2933;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="700" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="d-pre" value="&lt;b&gt;Context:&lt;/b&gt; 3–4 TB · tables only · ≤16 columns · 10 simple data types.&lt;br&gt;&lt;b&gt;Before any option:&lt;/b&gt; primary keys on all tables · DBA approval for Change Tracking / CDC · SQL Server version &amp;amp; edition check · delete handling agreed" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#9AA5B1;strokeWidth=1;fontSize=11;align=left;spacingLeft=12;fontColor=#3E4C59;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="56" width="740" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="How fresh must&lt;br&gt;delta data be?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#52606D;strokeWidth=1;fontSize=11;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="300" y="135" width="220" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="Network path from&lt;br&gt;Snowflake to on-prem&lt;br&gt;allowed?&lt;br&gt;&lt;font color=&quot;#7B8794&quot; style=&quot;font-size:9px&quot;&gt;VPN / Private Link / IP allow-list&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#52606D;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="60" y="300" width="240" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="Licence budget&lt;br&gt;AND many tables&lt;br&gt;(100+)?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#52606D;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="520" y="300" width="240" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="oA" value="&lt;font color=&quot;#C25E0B&quot;&gt;Option A&lt;/font&gt;&lt;br&gt;&lt;b&gt;Openflow SQL Server connector&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;native · CDC or Change Tracking&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FDF0E4;strokeColor=#E67E22;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="30" y="495" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oC" value="&lt;font color=&quot;#C25E0B&quot;&gt;Option C&lt;/font&gt;&lt;br&gt;&lt;b&gt;Fivetran/HVR · Qlik Replicate&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;agent inside network, outbound only&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FDF0E4;strokeColor=#E67E22;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="305" y="495" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oB" value="&lt;font color=&quot;#2E7D32&quot;&gt;&lt;b&gt;★ Option B · RECOMMENDED&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;b&gt;Python + Airflow&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#616E7C&quot;&gt;Change Tracking → stage → MERGE&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EEF7EF;strokeColor=#2E7D32;strokeWidth=1;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="580" y="495" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d-note" value="&lt;b&gt;Historical load (3–4 TB)&lt;/b&gt; always uses bulk export – Python → Parquet → PUT → COPY INTO (bcp for numeric-only tables) – whichever delta option is chosen. Record the Change Tracking version before extract." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;strokeWidth=1;fontSize=11;align=left;spacingLeft=12;fontColor=#1F2933;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="610" width="740" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d-no" value="&lt;b&gt;✕ Not recommended:&lt;/b&gt; ADF / SSIS (needs Blob staging – extra cloud component) · watermark-only delta (misses deletes) · daily full reload (moves 3–4 TB every day) · connector snapshot for history (slow at this volume)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FDF2F1;strokeColor=#E5A39B;strokeWidth=1;fontSize=11;align=left;spacingLeft=12;fontColor=#8A1C12;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="672" width="740" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d-foot" value="Prepared by: Jitendra Chauhan" style="text;html=1;fontSize=10;fontColor=#7B8794;align=right;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="480" y="732" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="de1" value="Minutes (near real-time)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#52606D;endArrow=blockThin;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d1" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de2" value="Daily / hourly" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#52606D;endArrow=blockThin;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d1" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de3" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2E7D32;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#2E7D32;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2" target="oA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#B42318;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#B42318;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2" target="oC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#2E7D32;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#2E7D32;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d3" target="oC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de6" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#B42318;endArrow=blockThin;endFill=1;fontSize=10;fontColor=#B42318;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d3" target="oB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
